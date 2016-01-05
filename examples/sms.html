@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link href="node_modules/bootswatch/flatly/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="colibriCar.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row margin-top-full">
+        <div class="col-xs-12">
+          <div class="btn-group" role="group" aria-label="...">
+            <a href="index.html" class="btn btn-default">Calendrier</a>
+            <a href="emails.html" class="btn btn-default">Emails</a>
+            <a href="sms.html" class="btn btn-info active">SMS</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <h1>Situation</h1>
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#devis" data-toggle="pill">Devis demandé au téléphone</a></li>
+            <li><a href="#agenda" data-toggle="pill">Agenda du jour</a></li>
+            <li><a href="#info-client" data-toggle="pill">Info client</a></li>
+            <li><a href="#reservation-offline" data-toggle="pill">Réservation offline</a></li>
+            <!--li><a href="#reservation-manuelle" data-toggle="pill">Réorganisation manuelle</a></li>
+            <li><a href="#reservation-attente-acompte" data-toggle="pill">Acompte non reçu</a></li-->
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <h1>SMS d'exemple</h1>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="devis">
+              <div class="row">
+                <div class="col-xs-9 well">
+                <strong>SMS Loueur:</strong> DEVIS diesel 05/01/2016 15/01/2016 jean.dupont@gmail.com
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-offset-4 col-xs-8 sms well text-right">
+                  <strong>Colibri Car:</strong> devis email envoyé à jean.dupont@gmail.com
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-offset-4 col-xs-8 sms well">
+                  <p>
+                    Cher Jean Dupont,
+                  </p>
+                  <p>
+                    Suite à notre conversation, j’ai le plaisir de vous communiquer ce devis.<br/>
+                    Louer une diesel 5 portes du 05 janvier 2016 au 15 janvier 2016 coûtera 250€.<br/>
+                    La voiture vous attendra à l’aéroport lors de votre arrivée.
+                  </p>
+                  <p>
+                    <button type="button" class="btn btn-primary">Compléter la réservation</button>
+                  </p>
+                  <p>Ce devis est valable 3 jours.</p>
+                  <p>
+                    Cordialement,<br/>
+                    Votre loueur
+                  </p>
+                </div>
+              </div> 
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="agenda">
+              <div class="row">
+                <div class="col-xs-8 well">
+                  <strong>Vincent:</strong> AGENDA
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-offset-4 col-xs-8 sms well text-right bg-success">
+                  <strong>Colibri:</strong> AA-1234-45 13h30 aéroport FIN<br/>
+                  BB-6543-21 14h00 aéroport DEBUT<br/>
+                  CC-9191-55 17h00 gîte DEBUT
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-8 well">
+                  <strong>Vincent:</strong> PROCHAIN
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-offset-4 col-xs-8 sms well text-right bg-success">
+                  <strong>Colibri:</strong> AA-1234-45 13h30 aéroport FIN Scarlett Johansen
+                </div>
+              </div>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="info-client">
+              <div class="row">
+                <div class="col-xs-8 well">
+                  <strong>Vincent:</strong> INFO scarlet
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-offset-4 col-xs-8 sms well text-right bg-success">
+                  <strong>Colibri:</strong> Scarlett Johansen 0123456789 s.johansen@gmail.com<br/>
+                  DE-7777-66 27/01/2016 15h30 aéroport DEBUT<br/>
+                  05/02/2016 10h30 aéroport FIN
+                </div>
+              </div>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="reservation-offline">
+              <div class="row">
+                <div class="col-xs-8 well">
+                  <strong>Vincent:</strong> RESA BD-1234-56 12/02/2016 19/02/2016
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-offset-4 col-xs-8 sms well text-right bg-success">
+                  <strong>Colibri:</strong> OK RESA BD-1234-56 12/02/2016 19/02/2016
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-offset-4 col-xs-8 sms well bg-success">
+                  <p><strong>Colibri</strong> à vincent@apslocation.net</strong></p>
+                  <p>
+                    Veuillez compléter les informations de la réservation BD-1234-56 12/02/2016 19/02/2016
+                  </p>
+                  <p>
+                    <button type="button" class="btn btn-primary">Compléter la réservation</button>
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!--div role="tabpanel" class="tab-pane" id="surclassement">
+              <p>
+                La voiture <a href="#">CC-463271 (essence)</a> peut être louée du 23/12/2015 au 07/01/2016 à <a href="#">Leonardo DiCaprio</a>, mais nécessite un surclassement.
+              </p>
+              <p>
+                Arrivée: 23/12/2015 aéroport AF 234<br/>
+                Départ: 07/01/2016 aéroport AF 235<br/>
+                Catégorie: essence<br/>
+                Paiement: complet
+              </p>
+              <p>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Accepter</button>
+                <button type="button" class="btn btn-default">Réorganiser manuellement</button>
+                <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-earphone"></span> Appeler Leonardo DiCaprio</button>
+              </p>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="surclassement-reorganisation">
+              <p>
+                La voiture <a href="#">CC-463271 (essence)</a> peut être louée du 23/12/2015 au 07/01/2016 à <a href="#">Matt Damon</a>, mais nécessite un surclassement et une réorganisation.
+              </p>
+              <p>
+                Arrivée: 23/12/2015 aéroport AF 234<br/>
+                Départ: 07/01/2016 aéroport AF 235<br/>
+                Catégorie: essence<br/>
+                Paiement: complet
+              </p>
+              <p>
+                <strong>Réorganisation:</strong>
+                <ul>
+                  <li>Affecter CC-987654 à la réservation de <a href="#">Jeanne Moreau</a> du 18/12/2015 au 26/12/2015</li>
+                  <li>Affecter DD-234765 à la réservation de <a href="#">Jean Reno</a> du 05/01/2016 au 15/01/2016</li>
+                </ul>
+              </p>
+              <p>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Accepter</button>
+                <button type="button" class="btn btn-default">Réorganiser manuellement</button>
+                <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-earphone"></span> Appeler Matt Damon</button>
+              </p>
+            </div-->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+		<script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>

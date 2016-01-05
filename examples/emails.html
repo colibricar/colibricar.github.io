@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link href="node_modules/bootswatch/flatly/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="colibriCar.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row margin-top-full">
+        <div class="col-xs-12">
+          <div class="btn-group" role="group" aria-label="...">
+            <a href="index.html" class="btn btn-default">Calendrier</a>
+            <a href="emails.html" class="btn btn-info active">Emails</a>
+            <a href="sms.html" class="btn btn-default">SMS</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <h1>Situation</h1>
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#reservation" data-toggle="pill">Location</a></li>
+            <li><a href="#reservation-reorganisation" data-toggle="pill">Location avec réorganisation</a></li>
+            <li><a href="#surclassement" data-toggle="pill">Location avec surclassement</a></li>
+            <li><a href="#surclassement-reorganisation" data-toggle="pill">Location avec surclassement et réorganisation</a></li>
+            <li><a href="#reservation-manuelle" data-toggle="pill">Réorganisation manuelle</a></li>
+            <li><a href="#reservation-attente-acompte" data-toggle="pill">Acompte non reçu</a></li>
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <h1>Email d'exemple</h1>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="reservation">
+              <p>
+                La voiture <a href="#">AA-123456 (diesel)</a> a été louée du 17/12/2015 au 26/12/2015 à <a href="#">Reed Hastings</a>.
+              </p>
+              <p>
+                Arrivée: 17/12/2015 aéroport AF 234<br/>
+                Départ: 26/12/2015 aéroport AF 235<br/>
+                Catégorie: diesel<br/>
+                Paiement: acompte
+              </p>
+              <p>
+                <button type="button" class="btn btn-primary">Voir la réservation</button>
+                <button type="button" class="btn btn-default">Voir le calendrier</button>
+                <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-earphone"></span> Appeler Reed Hastings</button>
+              </p>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="reservation-reorganisation">
+              <p>
+                La voiture <a href="#">BB-123456 (4x4)</a> peut être louée du 23/12/2015 au 07/01/2016 à <a href="#">Christine Lagarde</a>, mais nécessite une réorganisation.
+              </p>
+              <p>
+                Arrivée: 23/12/2015 aéroport AF 234<br/>
+                Départ: 07/01/2016 aéroport AF 235<br/>
+                Paiement: complet
+              </p>
+              <p>
+                <strong>Réorganisation:</strong>
+                <ul>
+                  <li>Affecter CC-987654 à la réservation de <a href="#">Jeanne Moreau</a> du 18/12/2015 au 26/12/2015</li>
+                </ul>
+              </p>
+              <p>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Accepter</button>
+                <button type="button" class="btn btn-default">Voir la réorganisation</button>
+                <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-earphone"></span> Appeler Christine Lagarde</button>
+              </p>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="reservation-manuelle">
+              <p>
+                Une réservation ne peut être satisfaite automatiquement pour José Bové.
+              </p>
+              <p>
+                Arrivée: 05/01/2016 gîte Chez Gisèle<br/>
+                Départ: 20/01/2016 aéroport AF 451<br/>
+                Catégorie: cabriolet<br/>
+                Paiement: aucun
+              </p>
+              <p>
+                <button type="button" class="btn btn-primary">Réorganiser manuellement</button>
+                <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-earphone"></span> Appeler José Bové</button>
+              </p>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="reservation-attente-acompte">
+              <p>
+                Aucun acompte n'a été reçu pour la location de <a href="#">Gad Elmaleh</a> demandée il y a 10 jours.
+              </p>
+              <p>
+                Arrivée: 08/02/2016 aéroport AF 234<br/>
+                Départ: 17/02/2016 aéroport AF 451<br/>
+                Catégorie: diesel<br/>
+                Paiement: aucun
+              </p>
+              <p>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span> Envoyer un rappel</button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Composer un rappel</button>
+                <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-earphone"></span> Appeler Gad Elmaleh</button>
+                <button type="button" class="btn btn-danger">Annuler la location</button>
+              </p>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="surclassement">
+              <p>
+                La voiture <a href="#">CC-463271 (essence)</a> peut être louée du 23/12/2015 au 07/01/2016 à <a href="#">Leonardo DiCaprio</a>, mais nécessite un surclassement.
+              </p>
+              <p>
+                Arrivée: 23/12/2015 aéroport AF 234<br/>
+                Départ: 07/01/2016 aéroport AF 235<br/>
+                Catégorie: essence<br/>
+                Paiement: complet
+              </p>
+              <p>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Accepter</button>
+                <button type="button" class="btn btn-default">Réorganiser manuellement</button>
+                <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-earphone"></span> Appeler Leonardo DiCaprio</button>
+              </p>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="surclassement-reorganisation">
+              <p>
+                La voiture <a href="#">CC-463271 (essence)</a> peut être louée du 23/12/2015 au 07/01/2016 à <a href="#">Matt Damon</a>, mais nécessite un surclassement et une réorganisation.
+              </p>
+              <p>
+                Arrivée: 23/12/2015 aéroport AF 234<br/>
+                Départ: 07/01/2016 aéroport AF 235<br/>
+                Catégorie: essence<br/>
+                Paiement: complet
+              </p>
+              <p>
+                <strong>Réorganisation:</strong>
+                <ul>
+                  <li>Affecter CC-987654 à la réservation de <a href="#">Jeanne Moreau</a> du 18/12/2015 au 26/12/2015</li>
+                  <li>Affecter DD-234765 à la réservation de <a href="#">Jean Reno</a> du 05/01/2016 au 15/01/2016</li>
+                </ul>
+              </p>
+              <p>
+                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> Accepter</button>
+                <button type="button" class="btn btn-default">Réorganiser manuellement</button>
+                <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-earphone"></span> Appeler Matt Damon</button>
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+		<script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>

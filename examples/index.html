@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rome/2.1.22/rome.min.css" type="text/css">
+		<link rel="stylesheet" href="colibriCar.css" type="text/css">
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div class="container-fluid">
+      <div class="row margin-top-full" style="margin-bottom: 1em">
+        <div class="col-xs-12">
+          <div class="btn-group" role="group" aria-label="...">
+            <a href="index.html" class="btn btn-info active">Calendrier</a>
+            <a href="emails.html" class="btn btn-default">Emails</a>
+            <a href="sms.html" class="btn btn-default">SMS</a>
+          </div>
+        </div>
+      </div>
+
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <button data-form-show="#addCarForm" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Voiture</button>
+		      <button data-form-show="#addRentalForm" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Location</button>
+		      <button id="optimiseButton" class="btn btn-default"><span class="glyphicon glyphicon-flash"></span> Optimiser</button>
+		    </div>
+		  </div>
+		  <div class="row margin-top-full">
+		    <div class="col-xs-offset-1 col-md-7">
+		      <div class="row">
+		        <div class="col-xs-4">
+		          <input name="calendar-start" type="text" class="form-control" />
+		        </div>
+		        <div class="col-xs-offset-4 col-xs-4">
+		          <input name="calendar-end" type="text" class="form-control pull-right" />
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+			<div class="row">
+			  <div class="col-xs-1">
+			    <div id="headers-cars"></div>
+			  </div>
+				<div class="col-md-7">
+					<div class="scrollable">
+					  <div id="headers-months"></div>
+						<div id="headers-dates"></div>
+						<div id="cars"></div>
+					</div>
+				</div>
+				<div id="formsContainer" class="col-md-4">
+				  <form id="rentalForm" class="hidden">
+				    <h3>Location</h3>
+				    <div class="form-group">
+				      <label>Voiture</label>
+				      <select name="carId" class="form-control">
+				        <option></option>
+				      </select>
+				    </div>
+				    <div class="form-group">
+				      <label>D&eacute;but</label>
+				      <p id="rentalDateStart" class="form-control-static"></p>
+				    </div>
+				    <div class="form-group">
+				      <label>Fin</label>
+				      <p id="rentalDateEnd" class="form-control-static"></p>
+				    </div>
+				    <div class="form-group">
+				      <label>Cat&eacute;gorie</label>
+				      <p id="rentalCategory" class="form-control-static"></p>
+				    </div>
+				    <input type="hidden" name="rentalId" value="" />
+				    
+				    <!--button id="rentalSaveButton" type="button" class="btn btn-primary">Enregistrer</button>
+				    <button id="rentalCancelButton" type="button" class="btn btn-default">Annuler</button-->
+				  </form>
+				  
+				  <form id="addCarForm" data-form-submit class="hidden">
+				    <h3>Voiture</h3>
+				    <div class="form-group">
+				      <label>Nom</label>
+				      <input type="text" name="name" class="form-control" />
+				    </div>
+				    <div class="form-group">
+				      <label>Cat&eacute;gorie</label>
+				      <select name="categoryId" class="form-control">
+				      </select>
+				    </div>
+				    <button type="submit" class="btn btn-primary">Enregistrer</button>
+				  </form>
+				  
+				  <form id="addRentalForm" data-form-submit class="hidden">
+				    <h3>Location</h3>
+				    <div class="form-group">
+				      <label>D&eacute;but</label>
+				      <input type="date" name="start" class="form-control" />
+				    </div>
+				    <div class="form-group">
+				      <label>Fin</label>
+				      <input type="date" name="end" class="form-control" />
+				    </div>
+				    <div class="form-group">
+				      <label>Cat&eacute;gorie</label>
+				      <select name="categoryId" class="form-control">
+				      </select>
+            </div>
+				    <div class="form-group">
+				      <label>Voiture</label>
+				      <select name="carId" class="form-control"></select>
+				    </div>
+				    <button type="submit" class="btn btn-primary">Enregistrer</button>
+				  </form>
+				  
+				  
+				  <!--button id="resetButton" class="btn btn-default">Reset</button-->
+				</div>
+			</div>
+		</div>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.0/moment.min.js"></script>
+		<script src="locale/fr.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/rome/2.1.22/rome.standalone.min.js"></script>
+		<script src="colibriCar.js"></script>
+	</body>
+</html>

@@ -1,0 +1,98 @@
+body {
+  background-color: #F8F8F8;
+}
+
+.data-box {
+	display: inline-block;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 0;
+}
+
+.data-box-primary {
+  background-color: #337AB7;
+  border-color: #2E6DA4;
+}
+
+.data-box-success {
+  background-color: #5CB85C;
+  border-color: #4CAE4C;
+}
+
+.data-box-info {
+  background-color: #5BC0DE;
+  border-color: #46B8DA;
+}
+
+.data-box-warning {
+  background-color: #F0AD4E;
+  border-color: #EEA236;
+}
+
+.data-box-danger {
+  background-color: #D9534F;
+  border-color: #D43F3A;
+}
+
+.data-box-primary-flatly {
+  background-color: #2C3E50;
+  border-color: #000000;
+}
+
+.data-box-success-flatly {
+  background-color: #128F76;
+  border-color: #0A4B3E;
+}
+
+.data-box-empty {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.header-date {
+	width: 2em;
+}
+
+.header-car {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+.scrollable {
+	overflow-x: scroll;
+}
+
+.rental {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.rental-selected {
+  border-width: 4px;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.margin-top-full {
+  margin-top: 1em;
+}
+
+.sms {
+  background-color: #DFF0D8;
+}
+
+/**
+ * Rome datepicker customisation
+ */
+
+.rd-day-body {
+  padding: 0.3em;
+}
