@@ -444,17 +444,24 @@ function optimise() {
     delete rental.carId;
   });
   
-  // sort rentals by category
-  var rentalsByCategory = {};
-  data.rentals.forEach(function (rental) {
+  // separate rentals by category
+  var rentalsByCategory = data.rentals.reduce(function (map, rental) {
     var category = data.categories[rental.categoryId];
-    if (rentalsByCategory[rental.categoryId] === undefined) {
-      rentalsByCategory[rental.categoryId] = [];
+    if (map[rental.categoryId] === undefined) {
+      map[rental.categoryId] = [];
     }
-    rentalsByCategory[rental.categoryId].push(rental);
-  });
+    map[rental.categoryId].push(rental);
+    
+    return map;
+  }, {});
   
-  // sort rentals by start date
+  var rentalsByCar = data.cars.reduce(function (map, car) {
+    map[car.id] = [];
+    
+    return map;
+  }, {});
+  
+  // sort rentals within categories by start date
   Object.keys(rentalsByCategory).forEach(function (categoryId) {
     rentalsByCategory[categoryId] = rentalsByCategory[categoryId].sort(sortRentalsByStart);
   });
@@ -465,22 +472,19 @@ function optimise() {
     var rentals = rentalsByCategory[categoryId];
     var cars = data.cars
       .filter(filterCarByCategory.bind(null, parseInt(categoryId)));
-    
-    for (var i = 0; i < rentals.length; i++) {
-      var rental = rentals[i];
+      
+    rentals.forEach(function (rental) {
       var availableCars = cars.filter(function (car) {
-        return data.rentals
-          .filter(filterRentalByCar.bind(car))
-          .filter(filterExcludeRentalOutsideDateRange.bind(null, toLocalDate(rental.start), toLocalDate(rental.end)))
-          .length === 0;
+        return rentalsByCar[car.id].filter(filterExcludeRentalOutsideDateRange.bind(null, toLocalDate(rental.start), toLocalDate(rental.end))).length === 0;
       });
       if (availableCars.length > 0) {
         rental.carId = availableCars[0].id;
+        rentalsByCar[rental.carId].push(rental);
       } else {
-        console.log("No car in category " + data.categories[categoryId] + " available " + rental.start + " => " + rental.end);
+        alert("Pas de voiture disponible dans la catégorie " + data.categories[categoryId] + " du " + rental.start + " au " + rental.end);
         success = false;
       }
-    }
+    });
   });
   
   return success;
