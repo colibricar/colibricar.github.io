@@ -52,64 +52,64 @@ var data = {
 		{
 			id: 1,
 			carId: 1,
-			start: "2015-12-08",
-			end: "2015-12-15",
+			start: isoDateIn(7, "days"),
+			end: isoDateIn(14, "days"),
 			categoryId: 1
 		},
 		{
 		  id: 2,
 		  carId: 2,
-		  start: "2015-12-01",
-		  end: "2015-12-05",
+		  start: isoDateIn(0, "days"),
+		  end: isoDateIn(5, "days"),
 			categoryId: 2
 		},
 		{
 		  id: 3,
 		  carId: 2,
-		  start: "2015-12-07",
-		  end: "2015-12-12",
+		  start: isoDateIn(7, "days"),
+		  end: isoDateIn(12, "days"),
 			categoryId: 2
 		},
 		{
 		  id: 4,
 		  carId: 1,
-		  start: "2015-12-03",
-		  end: "2015-12-07",
+		  start: isoDateIn(15, "days"),
+		  end: isoDateIn(19, "days"),
 			categoryId: 1
 		},
 		{
 		  id: 5,
 		  carId: 3,
-		  start: "2015-12-27",
-		  end: "2015-12-31",
+		  start: isoDateIn(2, "days"),
+		  end: isoDateIn(6, "days"),
 			categoryId: 3
 		},
 		{
 		  id: 6,
 		  carId: 4,
-		  start: "2015-12-16",
-		  end: "2015-12-21",
+		  start: isoDateIn(7, "days"),
+		  end: isoDateIn(12, "days"),
 			categoryId: 1
 		},
 		{
 		  id: 7,
 		  carId: 2,
-		  start: "2016-01-01",
-		  end: "2016-01-07",
+		  start: isoDateIn(13, "days"),
+		  end: isoDateIn(19, "days"),
 			categoryId: 2
 		},
 		{
 		  id: 8,
 		  carId: 1,
-		  start: "2016-01-02",
-		  end: "2016-01-15",
+		  start: isoDateIn(0, "days"),
+		  end: isoDateIn(6, "days"),
 			categoryId: 1
 		},
 		{
 		  id: 9,
 		  carId: 4,
-		  start: "2017-01-01",
-		  end: "2017-01-10",
+		  start: isoDateIn(36, "days"),
+		  end: isoDateIn(45, "days"),
 			categoryId: 1
 		}
 	],
@@ -578,6 +578,10 @@ function toLocalDate(dateString, format) {
     format = "YYYY-MM-DD";
   }
   return moment(dateString, format).local().startOf("day");
+}
+
+function isoDateIn(amount, unit) {
+  return moment().add(amount, unit).format("YYYY-MM-DD");
 }
 
 function getInitialDates() {
