@@ -266,14 +266,19 @@ function createRentalForm() {
         return rental.id === rentalId;
       })[0];
       rental.carId = parseInt(this.value);
+      var minimumCategory = data.categories[rental.categoryId];
+      var rentalCar = findById(data.cars, rental.carId);
+      var rentalCategory = data.categories[rentalCar.categoryId];
       
       createRentalCalendar();
+      updateRentalCategoryText(rentalCategory, minimumCategory);
     });
 }
 
 function editRental(rental) {
   var rentalCar = findById(data.cars, rental.carId);
-  var minimumCategory = data.categories[rentalCar.categoryId];
+  var minimumCategory = data.categories[rental.categoryId];
+  var rentalCategory = data.categories[rentalCar.categoryId];
   var form = $("#rentalForm");
   var options = data.cars
     .sort(sortByName)
@@ -287,7 +292,7 @@ function editRental(rental) {
 
   $("#rentalDateStart").text(toLocalDate(rental.start).format("L"));
   $("#rentalDateEnd").text(toLocalDate(rental.end).format("L"));
-  $("#rentalCategory").text(data.categories[rental.categoryId].name);
+  updateRentalCategoryText(rentalCategory, minimumCategory);
   form.find("input[name=rentalId]").val(rental.id);
   data.selectedRentalId = rental.id;
 }
@@ -649,4 +654,12 @@ function setRentalColors() {
     .forEach(function (rental) {
       rental.colorClass = getNextColorClass();
     });
+}
+
+function updateRentalCategoryText(rentalCategory, minimumCategory) {
+  var rentalCategoryText = rentalCategory.name;
+  if (rentalCategory !== minimumCategory) {
+    rentalCategoryText += " (transféré de " + minimumCategory.name + ")";
+  }
+  $("#rentalCategory").text(rentalCategoryText);
 }
